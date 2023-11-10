@@ -45,22 +45,43 @@ Sistema de controle de versão utilizado para rastrear alterações no código-f
 ### [GitHub](https://github.com/)
 Plataforma de hospedagem de repositórios de controle de versão Git, utilizada para armazenar e gerenciar o código-fonte do projeto. O GitHub permite o trabalho colaborativo, controle de versões, rastreamento de alterações e facilita a integração com ferramentas de desenvolvimento.
 
-#### falar do docker 
+#### [Docker](https://www.docker.com/products/docker-desktop/)
+Software de conteinização para desenvolvedores, possibilitando o empacotamento de uma aplicação ou ambiente dentro de um container, se tornando portátil para qualquer outro host que contenha o Docker instalado. Então, você consegue criar, implantar, copiar e migrar de um ambiente para outro com maior flexibilidade.
 
+###Estruturas de Bancos de dados utilizados no Projeto
 
-## Instalação
-Passos para a execução do projeto utilizando PostgreSQL
+## Modelo de Banco de dados h2 Executado ao Subir a aplicação no Eclipse.
 
-1. Instale e configure o PostgreSQL: 
-   Script utilizado para criação via powershell: 
+1. Tabelas Criadas no banco de dados H2 após subir a aplicação no Eclipse
+<img width="602" alt="Criando Tabelas no Postgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/d8107fd3-4355-4e83-86d1-501e98eb7c94">
 
-   version: "3.7"
+2. Consutas realizadas no banco de dados h2 após inserção de dados utilizando o metodo Post através do Postman
+  
+   ## Consulta de Clientes banco de dados h2
+   <img width="686" alt="Consulta Cliente h2" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/6fcb56e4-aac1-4aa0-9ffd-caf72318b7d0">
+
+   ## Consulta de Endereços banco de dados h2
+   <img width="686" alt="Cosulta Endereço h2" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/abe88ee6-122d-4df6-ba5a-e95408633ab6">
+
+   ## Consulta de Veiculos banco de dados h2
+   <img width="686" alt="Consulta Veiculo h2 " src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/a1c7c9e7-b635-4c97-8cc3-e524c48fc120">
+
+   ## Consulta Parquimetro banco de dados h2
+   <img width="686" alt="Consulta Parquimetro h2" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/8674ae79-2084-4d2c-a44c-7d931352b19c">
+
+## Passos para a execução do projeto utilizando PostgreSQL
+
+1. Instale o Docker Desktop e configure o PostgreSQL: 
+
+#### *Script utilizado para criação via powershell <br /><br />
+ version: "3.7"
 services:
-
- # POSTGRES SERVER
+  # ====================================================================================================================
+  # POSTGRES SERVER
+  # ====================================================================================================================
   pg-docker:
     image: postgres:14-alpine
-    container_name: tech-postgresql
+    container_name: park-postgresql
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_PASSWORD: 1234567
@@ -69,13 +90,13 @@ services:
     volumes:
       - ./.data/postgresql/data:/var/lib/postgresql/data
     networks:
-      - tech-network
-
-
+      - ed-network
+  # ====================================================================================================================
   # PGADMIN
+  # ====================================================================================================================
   pgadmin-docker:
     image: dpage/pgadmin4
-    container_name: tech-pgadmin
+    container_name: park-pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: me@example.com
       PGADMIN_DEFAULT_PASSWORD: 1234567
@@ -86,25 +107,42 @@ services:
     depends_on:
       - pg-docker
     networks:
-      - tech-network
-
-  # REDE
-  networks:
-    tech-network:
-      driver: bridge
-
+      - ed-network
+# ======================================================================================================================
+# REDE
+# ======================================================================================================================
+networks:
+  ed-network:
+    driver: bridge
+<br />
 
 2. Execute e inicialize os serviços na sua máquina com o DockerDesktop
-<img width="960" alt="subindoserviços" src="https://github.com/edcarlossilva1/techchallenge-master/assets/138680851/727b1fb2-358d-4903-98ae-d09237a2cee2">
+   <img width="686" alt="Subindo serviços pgadmin e pgpostgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/84bfaf25-51f0-47dc-8518-e376801fa88e">
 
-3.Execute o Postgres através do endereço http://localhost:5050/browser/
+3. Execute o Postgres através do endereço![Logo do Markdown](img/markdown.png) http://localhost:5050/browser/
+   <img width="686" alt="Acessando o pgAdmin Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/a38ab913-4749-4f53-953d-6e409dc425c4">
 
-### Relaizar Login 
-<img width="959" alt="logindocker" src="https://github.com/edcarlossilva1/techchallenge-master/assets/138680851/65aa8223-264a-4cdb-9dad-cfdcba782a94">
+4. Criando Tabelas no banco de dados Postgres
+   <img width="686" alt="Criando Tabelas no Postgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/ d8107fd3-4355-4e83-86d1-501e98eb7c94">
+
+4. Visualizando Base, schemas, tabelas e relacionamentos.
+   <img width="686" alt="RelacionamentoTabelasPostgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/9fb51570-baae-4da5-9de9-1d1fa1b677a5">
+
+5. Consultas de tabelas no Postgres em nuvem pelo servidor PgAdmin. 
+   
+   ## Consulta de Clientes banco de dados Postgres
+   <img width="821" alt="Consulta Cliente Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/3a2f3580-81e9-4d2a-ab38-f2780e6f7b80">
+
+   ## Consulta de Endereços banco de dados Postgres
+  <img width="943" alt="Consulta Endereco Postgres " src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/9435ffda-bcf7-47ff-aa56-03371d1dbc01">
+
+   ## Consulta de Veiculos banco de dados Postgres
+   <img width="784" alt="Consulta Veiculo Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/c8ca16b1-8d17-493d-82b9-235f14a866c2">
+
+   ## Consulta Parquimetro banco de dados Postgres
+   <img width="829" alt="Consulta Parquimetro Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/2a4f1dc1-abf1-4b8e-bd04-96433da51ee4">
 
 
-### Visualizando Base, schemas e tabelas criadas no inicio do projeto
-<img width="957" alt="verificatabela" src="https://github.com/edcarlossilva1/techchallenge-master/assets/138680851/4b6d74d7-6c0f-4dfb-ba69-2152fba559a4">
 
 ## Jornada
 
@@ -119,13 +157,13 @@ Nesta segunda fase o desafio continua grande, estou aprendendo muito com as live
 
 ### Terceira fase
 
-Nesta terceira fase consegui ter um melhor desenpenho no desenvolvimento do que foi proposto para o negócio, com mais clareza e entendimento nas lives do coda comigo, consegui melhorar minha aplicação e utilizar nos processo do CRUD os conceitos de relacionamento OneToOne, ManyToOne, OneToMany, ManyToMany, tanto no contexto unidirecional quanto no bidirecional, aplicando as camadas de segurança e realiando o tratamento das exceções, para garantira a validação de dados e a sua segurança. Para mim foi muito interessante essa troca de experincia e informações nas lives, em meu projeto estou conseguindo aplicar muitas dicas e aprendizados, agora consigo enteder melhor meu código e como funciona e para que servem os padrões de camadas, consegui aplicar a utilização do banco de dados em nuvem não requerendo consumo da máquina local, além de possibilitar o desenvolvimento em ambientes diferentes como ambiente de desenvolvimento, ambiente de teste e ambiente de produção para quando for o caso de colocar a aplicação em nuvem.
+Nesta terceira fase consegui ter um melhor desenpenho no desenvolvimento do que foi proposto para o negócio, com mais clareza e entendimento nas lives do coda comigo, consegui melhorar minha aplicação e utilizar nos processo de CRUD os conceitos de relacionamento OneToOne, ManyToOne, OneToMany, ManyToMany, tanto no contexto unidirecional quanto no bidirecional, aplicando as camadas de segurança e realizando o tratamento das exceções, para garantira a validação de dados e a sua segurança. Para mim foi muito interessante essa troca de experincia e informações nas lives, em meu projeto estou conseguindo aplicar muitas dicas e aprendizados, agora consigo enteder melhor meu código e como funciona e para que servem os padrões de camadas, consegui aplicar a utilização do banco de dados em nuvem não requerendo consumo da máquina local, além de possibilitar o desenvolvimento em ambientes diferentes como ambiente de desenvolvimento, ambiente de teste e ambiente de produção para quando for o caso de colocar a aplicação em nuvem.
 
 ## Autor
 
 - [Ed Carlos](email: rm349820@fiap.com.br)
 
-Agradeço a minha esposa[Priscia Angelica da Silva] que continua contribuindo com o projeto me apoiando com as atividades pessoais em que não pude participar devido aos estudos.  
+Agradeço a minha esposa[Priscia Angelica da Silva] que continua contribuindo com o projeto me apoiando com as atividades pessoais em que não pude participar devido aos estudos.
 
 
 ## Licença
