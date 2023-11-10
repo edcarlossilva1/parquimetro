@@ -74,11 +74,13 @@ Software de conteinização para desenvolvedores, possibilitando o empacotamento
 1. Instale o Docker Desktop e configure o PostgreSQL: 
 
 #### *Script utilizado para criação via powershell <br /><br />
- version: "3.7"
+#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br /><br />
+
+     version: "3.7"
 services:
-  # ====================================================================================================================
+  
   # POSTGRES SERVER
-  # ====================================================================================================================
+  ====================================================================================================================
   pg-docker:
     image: postgres:14-alpine
     container_name: park-postgresql
@@ -91,10 +93,10 @@ services:
       - ./.data/postgresql/data:/var/lib/postgresql/data
     networks:
       - ed-network
-  # ====================================================================================================================
+  
   # PGADMIN
-  # ====================================================================================================================
-  pgadmin-docker:
+  ====================================================================================================================
+  [pgadmin-docker:
     image: dpage/pgadmin4
     container_name: park-pgadmin
     environment:
@@ -107,13 +109,14 @@ services:
     depends_on:
       - pg-docker
     networks:
-      - ed-network
-# ======================================================================================================================
+      - ed-network}
+      
 # REDE
-# ======================================================================================================================
+======================================================================================================================
 networks:
   ed-network:
     driver: bridge
+<br />
 <br />
 
 2. Execute e inicialize os serviços na sua máquina com o DockerDesktop
