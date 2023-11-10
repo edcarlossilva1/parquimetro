@@ -53,7 +53,7 @@ Software de conteinização para desenvolvedores, possibilitando o empacotamento
 ## Modelo de Banco de dados h2 Executado ao Subir a aplicação no Eclipse.
 
 1. Tabelas Criadas no banco de dados H2 após subir a aplicação no Eclipse
-<img width="602" alt="Criando Tabelas no Postgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/d8107fd3-4355-4e83-86d1-501e98eb7c94">
+   <img width="686" alt="Criando Tabelas no Postgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/d8107fd3-4355-4e83-86d1-501e98eb7c94">
 
 2. Consutas realizadas no banco de dados h2 após inserção de dados utilizando o metodo Post através do Postman
   
@@ -73,13 +73,14 @@ Software de conteinização para desenvolvedores, possibilitando o empacotamento
 
 1. Instale o Docker Desktop e configure o PostgreSQL: 
 
-#### *Script utilizado para criação via powershell <br /><br />
- version: "3.7"
+#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br /><br />
+
+     version: "3.7"
 services:
-  # ====================================================================================================================
+  
   # POSTGRES SERVER
-  # ====================================================================================================================
-  pg-docker:
+  ====================================================================================================================
+  {pg-docker:
     image: postgres:14-alpine
     container_name: park-postgresql
     environment:
@@ -91,10 +92,10 @@ services:
       - ./.data/postgresql/data:/var/lib/postgresql/data
     networks:
       - ed-network
-  # ====================================================================================================================
+   }
   # PGADMIN
-  # ====================================================================================================================
-  pgadmin-docker:
+  ====================================================================================================================
+  {pgadmin-docker:
     image: dpage/pgadmin4
     container_name: park-pgadmin
     environment:
@@ -108,36 +109,36 @@ services:
       - pg-docker
     networks:
       - ed-network
-# ======================================================================================================================
+  }
 # REDE
-# ======================================================================================================================
-networks:
+======================================================================================================================
+{networks:
   ed-network:
-    driver: bridge
+    driver: bridge}
 <br />
 
 2. Execute e inicialize os serviços na sua máquina com o DockerDesktop
-   <img width="686" alt="Subindo serviços pgadmin e pgpostgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/84bfaf25-51f0-47dc-8518-e376801fa88e">
+   <img width="829" alt="Subindo serviços pgadmin e pgpostgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/84bfaf25-51f0-47dc-8518-e376801fa88e">
 
 3. Execute o Postgres através do endereço![Logo do Markdown](img/markdown.png) http://localhost:5050/browser/
-   <img width="686" alt="Acessando o pgAdmin Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/a38ab913-4749-4f53-953d-6e409dc425c4">
+   <img width="829" alt="Acessando o pgAdmin Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/a38ab913-4749-4f53-953d-6e409dc425c4">
 
 4. Criando Tabelas no banco de dados Postgres
-   <img width="686" alt="Criando Tabelas no Postgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/ d8107fd3-4355-4e83-86d1-501e98eb7c94">
+   <img width="829" alt="Criando Tabelas no Postgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/ d8107fd3-4355-4e83-86d1-501e98eb7c94">
 
 4. Visualizando Base, schemas, tabelas e relacionamentos.
-   <img width="686" alt="RelacionamentoTabelasPostgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/9fb51570-baae-4da5-9de9-1d1fa1b677a5">
+   <img width="829" alt="RelacionamentoTabelasPostgree" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/9fb51570-baae-4da5-9de9-1d1fa1b677a5">
 
 5. Consultas de tabelas no Postgres em nuvem pelo servidor PgAdmin. 
    
    ## Consulta de Clientes banco de dados Postgres
-   <img width="821" alt="Consulta Cliente Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/3a2f3580-81e9-4d2a-ab38-f2780e6f7b80">
+   <img width="829" alt="Consulta Cliente Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/3a2f3580-81e9-4d2a-ab38-f2780e6f7b80">
 
    ## Consulta de Endereços banco de dados Postgres
-  <img width="943" alt="Consulta Endereco Postgres " src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/9435ffda-bcf7-47ff-aa56-03371d1dbc01">
+   <img width="829" alt="Consulta Endereco Postgres " src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/9435ffda-bcf7-47ff-aa56-03371d1dbc01">
 
    ## Consulta de Veiculos banco de dados Postgres
-   <img width="784" alt="Consulta Veiculo Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/c8ca16b1-8d17-493d-82b9-235f14a866c2">
+   <img width="829" alt="Consulta Veiculo Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/c8ca16b1-8d17-493d-82b9-235f14a866c2">
 
    ## Consulta Parquimetro banco de dados Postgres
    <img width="829" alt="Consulta Parquimetro Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/2a4f1dc1-abf1-4b8e-bd04-96433da51ee4">
