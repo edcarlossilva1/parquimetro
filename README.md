@@ -73,13 +73,24 @@ Software de conteinização para desenvolvedores, possibilitando o empacotamento
 
 1. Instale o Docker Desktop e configure o PostgreSQL: 
 
+<<<<<<< HEAD
 #### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br /><br />
 ```
+=======
+#### *Script utilizado para criação via powershell <br /><br />
+#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br /><br />
+
+>>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
      version: "3.7"
 services:
   
   # POSTGRES SERVER
+<<<<<<< HEAD
   {pg-docker:
+=======
+  ====================================================================================================================
+  pg-docker:
+>>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
     image: postgres:14-alpine
     container_name: park-postgresql
     environment:
@@ -91,10 +102,17 @@ services:
       - ./.data/postgresql/data:/var/lib/postgresql/data
     networks:
       - ed-network
+<<<<<<< HEAD
    }
   # PGADMIN
 
   {pgadmin-docker:
+=======
+  
+  # PGADMIN
+  ====================================================================================================================
+  [pgadmin-docker:
+>>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
     image: dpage/pgadmin4
     container_name: park-pgadmin
     environment:
@@ -107,13 +125,22 @@ services:
     depends_on:
       - pg-docker
     networks:
+<<<<<<< HEAD
       - ed-network
   }
 # REDE
 {networks:
+=======
+      - ed-network}
+      
+# REDE
+======================================================================================================================
+networks:
+>>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
   ed-network:
     driver: bridge}
     ```
+<br />
 <br />
 
 2. Execute e inicialize os serviços na sua máquina com o DockerDesktop
