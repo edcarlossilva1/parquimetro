@@ -135,9 +135,8 @@ networks:
   ed-network:
     driver: bridge
   }
-    ````
-
-#### *####Script para subir meu servidor e banco postgres no docker via terminal powershell* <br/><br/>
+```
+#### *Passos para realizar após a execução do script pelo powershell* <br/><br/>
 
 2. Execute e inicialize os serviços na sua máquina com o DockerDesktop 
    <img width="829" alt="Subindo serviços pgadmin e pgpostgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/84bfaf25-51f0-47dc-8518-e376801fa88e">
