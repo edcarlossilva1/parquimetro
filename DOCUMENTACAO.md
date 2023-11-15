@@ -18,15 +18,14 @@ A API de clientes consiste em um conjunto de endpoints para gerenciar os cliente
 Cria um cliente através dos dados recebidos via JSON no corpo da requisição.
 
 #### *Exemplo de inserção* <br /><br />
-````
+```
         {
             "nome": "Ed Carlos",
             "nascimento": "2023-11-03",
             "sexo":"Masculino",
             "email":"edcarlos.1@java.com"
         }
-````
-```
+
         {
             "nome": "Priscila ",
             "nascimento": "2023-10-02",
@@ -39,7 +38,7 @@ Cria um cliente através dos dados recebidos via JSON no corpo da requisição.
 📌
 ### 🔵 **GET** http://localhost:81/cliente
 \
-Lista todos os endereços contidos na base de dados.
+Lista todos os clientes contidos na base de dados.
 
 #### *Exemplo de requisição* <br /><br />
 
@@ -86,7 +85,49 @@ Lista um cliente especifico passando o seu ID.
 ```
 <br />
 
+📌
+### 🔵 **PUT** http://localhost:81/cliente/1
+\
+Atualizando informações de um cliente especifico passando o seu ID.
 
+#### *Exemplo de atualização por ID* <br />
+#### *Neste caso atualizamos a data de nascimento*<br /><br />
+```
+   {
+    "nome": "Ed Carlos",
+    "nascimento": "1989-11-03",
+    "sexo":"Masculino",
+    "email":"edcarlos.1@java.com"
+   }
+```
+<br />
+
+#### *Resultado antes de atialozar a informação* <br /><br />
+```
+            {
+            "id_cliente": 1,
+            "nome": "Ed Carlos",
+            "dtcriacao": "2023-11-15T12:48:34.151570Z",
+            "nascimento": "2023-11-03",
+            "sexo": "Masculino",
+            "email": "edcarlos.1@java.com",
+            "endereco": []
+            }
+```
+
+#### *Resultado após a atualização* <br /><br />
+
+```
+    {
+        "id_cliente": 1,
+        "nome": "Ed Carlos",
+        "dtcriacao": "2023-11-15T12:48:34.151570Z",
+        "email": "edcarlos.1@java.com",
+        "nascimento": "1989-11-03",
+        "sexo": "Masculino"
+    }
+```
+<br />
 
 
 
