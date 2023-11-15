@@ -3,57 +3,105 @@
 Esta documentação tem como objetivo listar, descrever e exemplificar os endpoints de todas as APIs do projeto de forma a facilitar o consumo da API pelos clientes.
 
 ### **Índice**
-🌎 [Endereços](#-api-de-endereços) \
-📺 [Eletrodomésticos](#-api-de-eletrodomésticos) \
-👤 [Pessoas](#-api-de-pessoas)
-
+👨 [Cliente](#-api-de-clientes) \
+🌎 [Endereços](#-api-de-enderecos) \
+🚗 [Veiculos](#-api-de-veiculos) \
+🎌 [Parquimetro](#-api-de-parquimetro)
 <br />
 
-## 🌎 API de Endereços
-A API de endereços consiste em um conjunto de endpoints para gerenciar os endereços. Ela dispõe de métodos para criação, edição, busca e listagem de endereços. <br /><br />
+## 🌎 API de Clientes
+A API de clientes consiste em um conjunto de endpoints para gerenciar os clientes. Ela dispõe de métodos para criação, edição, busca e listagem de clientes. <br /><br />
 
 📌
-### 🔵 **GET** http://localhost:8080/endereco
+### 🔵 **POST** http://localhost:81/cliente
+\
+Cria um cliente através dos dados recebidos via JSON no corpo da requisição.
+
+#### *Exemplo de inserção* <br /><br />
+````
+        {
+            "nome": "Ed Carlos",
+            "nascimento": "2023-11-03",
+            "sexo":"Masculino",
+            "email":"edcarlos.1@java.com"
+        }
+````
+```
+        {
+            "nome": "Priscila ",
+            "nascimento": "2023-10-02",
+            "sexo":"Feminino",
+            "email":"priscila.1@java.com"
+        }
+```
+<br />
+
+📌
+### 🔵 **GET** http://localhost:81/cliente
 \
 Lista todos os endereços contidos na base de dados.
 
 #### *Exemplo de requisição* <br /><br />
 
-    
-		{
-			"id": 1,
-			"rua": "Rua Concordia",
-			"numero": 12,
-			"bairro": "Santana",
-			"cidade": "São Paulo",
-			"estado": "SP"
-		},
-		{
-			"id": 2,
-			"rua": "Rua Terezopolis",
-			"numero": 329,
-			"bairro": "Santa Izabel",
-			"cidade": "Rio de Janeiro",
-			"estado": "RJ"
-		},
-		{
-			"id": 3,
-			"rua": "Rua Santo Elias",
-			"numero": 567,
-			"bairro": "Tatuape",
-			"cidade": "São Paulo",
-			"estado": "SP"
-		},
-		{
-			"id": 4,
-			"rua": "Rua João Vinte e Tres",
-			"numero": 1312,
-			"bairro": "Vila Maria",
-			"cidade": "São Paulo",
-			"estado": "SP"
-		}
-   
+```
+        {
+            "id_cliente": 2,
+            "nome": "Priscila ",
+            "dtcriacao": "2023-11-15T15:54:39.025836Z",
+            "nascimento": "2023-10-02",
+            "sexo": "Feminino",
+            "email": "priscila.1@java.com",
+            "endereco": []
+        },
+        {
+            "id_cliente": 1,
+            "nome": "Ed Carlos",
+            "dtcriacao": "2023-11-15T12:48:34.151570Z",
+            "nascimento": "2023-11-03",
+            "sexo": "Masculino",
+            "email": "edcarlos.1@java.com",
+            "endereco": []
+        }
+```
 <br />
+
+
+📌
+### 🔵 **GET** http://localhost:81/cliente/1
+\
+Lista um cliente especifico passando o seu ID.
+
+#### *Exemplo de requisição por ID* <br /><br />
+
+```
+            {
+            "id_cliente": 1,
+            "nome": "Ed Carlos",
+            "dtcriacao": "2023-11-15T12:48:34.151570Z",
+            "nascimento": "2023-11-03",
+            "sexo": "Masculino",
+            "email": "edcarlos.1@java.com",
+            "endereco": []
+            }
+```
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 📌
 ### 🔵 **GET** http://localhost:8080/endereco/1
