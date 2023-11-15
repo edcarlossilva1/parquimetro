@@ -91,7 +91,7 @@ Lista um cliente especifico passando o seu ID.
 Atualizando informações de um cliente especifico passando o seu ID.
 
 #### *Exemplo de atualização por ID* <br />
-#### *Neste caso atualizamos a data de nascimento*<br /><br />
+#### *Neste caso atualizamos a data de nascimento*<br/>
 ```
    {
     "nome": "Ed Carlos",
@@ -100,9 +100,7 @@ Atualizando informações de um cliente especifico passando o seu ID.
     "email":"edcarlos.1@java.com"
    }
 ```
-<br />
-
-#### *Resultado antes de atialozar a informação* <br /><br />
+#### *Resultado antes de atialozar a informação* <br/>
 ```
             {
             "id_cliente": 1,
@@ -114,7 +112,6 @@ Atualizando informações de um cliente especifico passando o seu ID.
             "endereco": []
             }
 ```
-
 #### *Resultado após a atualização* <br /><br />
 
 ```
@@ -127,7 +124,6 @@ Atualizando informações de um cliente especifico passando o seu ID.
         "sexo": "Masculino"
     }
 ```
-<br />
 
 
 
