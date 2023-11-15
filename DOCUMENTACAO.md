@@ -9,11 +9,13 @@ Esta documentação tem como objetivo listar, descrever e exemplificar os endpoi
 🎌 [Parquimetro](#-api-de-parquimetro)
 <br />
 
-## 🌎 API de Clientes
+
+
+## 👨 API de Clientes
 A API de clientes consiste em um conjunto de endpoints para gerenciar os clientes. Ela dispõe de métodos para criação, edição, busca e listagem de clientes. <br /><br />
 
 📌
-### 🔵 **POST** http://localhost:81/cliente
+### 🟢 **POST** http://localhost:81/cliente
 \
 Cria um cliente através dos dados recebidos via JSON no corpo da requisição.
 
@@ -86,7 +88,7 @@ Lista um cliente especifico passando o seu ID.
 <br />
 
 📌
-### 🔵 **PUT** http://localhost:81/cliente/1
+### 🟠 **PUT** http://localhost:81/cliente/1
 \
 Atualizando informações de um cliente especifico passando o seu ID.
 
@@ -95,12 +97,12 @@ Atualizando informações de um cliente especifico passando o seu ID.
 ```
    {
     "nome": "Ed Carlos",
-    "nascimento": "1989-11-03",
+    "nascimento": {c:red}"1989-11-03"{/c},
     "sexo":"Masculino",
     "email":"edcarlos.1@java.com"
    }
 ```
-#### *Resultado antes de atialozar a informação* <br/>
+#### *Resultado antes de atualizar a informação* <br/>
 ```
             {
             "id_cliente": 1,
