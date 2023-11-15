@@ -74,23 +74,20 @@ Software de conteinização para desenvolvedores, possibilitando o empacotamento
 1. Instale o Docker Desktop e configure o PostgreSQL: 
 
 <<<<<<< HEAD
-#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br /><br />
+#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* 
+
 ```
-=======
+===========================================================================================================================
 #### *Script utilizado para criação via powershell <br /><br />
 #### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br /><br />
-
->>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
      version: "3.7"
 services:
   
   # POSTGRES SERVER
 <<<<<<< HEAD
   {pg-docker:
-=======
-  ====================================================================================================================
+===========================================================================================================================
   pg-docker:
->>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
     image: postgres:14-alpine
     container_name: park-postgresql
     environment:
@@ -107,10 +104,9 @@ services:
   # PGADMIN
 
   {pgadmin-docker:
-=======
-  
+  ==========================================================================================================================
   # PGADMIN
-  ====================================================================================================================
+  ==========================================================================================================================
   [pgadmin-docker:
 >>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
     image: dpage/pgadmin4
@@ -140,8 +136,6 @@ networks:
   ed-network:
     driver: bridge}
     ```
-<br />
-<br />
 
 2. Execute e inicialize os serviços na sua máquina com o DockerDesktop
    <img width="829" alt="Subindo serviços pgadmin e pgpostgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/84bfaf25-51f0-47dc-8518-e376801fa88e">
