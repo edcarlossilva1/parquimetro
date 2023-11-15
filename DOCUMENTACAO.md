@@ -10,7 +10,6 @@ Esta documentação tem como objetivo listar, descrever e exemplificar os endpoi
 <br />
 
 
-
 ## 👨 API de Clientes
 A API de clientes consiste em um conjunto de endpoints para gerenciar os clientes. Ela dispõe de métodos para criação, edição, busca e listagem de clientes. <br /><br />
 
@@ -88,7 +87,7 @@ Lista um cliente especifico passando o seu ID.
 <br />
 
 📌
-### 🟠 **PUT** http://localhost:81/cliente/1
+### :yellow_circle: **PUT** http://localhost:81/cliente/1
 \
 Atualizando informações de um cliente especifico passando o seu ID.
 
@@ -97,7 +96,7 @@ Atualizando informações de um cliente especifico passando o seu ID.
 ```
    {
     "nome": "Ed Carlos",
-    "nascimento": {c:red}"1989-11-03"{/c},
+    "nascimento":" 1989-11-03",
     "sexo":"Masculino",
     "email":"edcarlos.1@java.com"
    }
@@ -127,7 +126,25 @@ Atualizando informações de um cliente especifico passando o seu ID.
     }
 ```
 
+📌
+### 🔴 **DELETE** http://localhost:81/cliente/1
+\
+Deletando um cliente especifico passando o seu ID.
 
+#### *Exemplo de requisição por ID* <br /><br />
+
+```
+            {
+            "id_cliente": 1,
+            "nome": "Ed Carlos",
+            "dtcriacao": "2023-11-15T12:48:34.151570Z",
+            "nascimento": "2023-11-03",
+            "sexo": "Masculino",
+            "email": "edcarlos.1@java.com",
+            "endereco": []
+            }
+```
+<br />
 
 
 
