@@ -73,10 +73,6 @@ Software de conteinização para desenvolvedores, possibilitando o empacotamento
 
 1. Instale o Docker Desktop e configure o PostgreSQL: 
 
-#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br />
-
-
-#### *Script utilizado para criação via powershell*  <br /><br />
 #### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br/><br/>
 ```   
 version: "3.7"
