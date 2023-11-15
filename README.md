@@ -73,14 +73,13 @@ Software de conteinização para desenvolvedores, possibilitando o empacotamento
 
 1. Instale o Docker Desktop e configure o PostgreSQL: 
 
-<<<<<<< HEAD
-#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* 
+#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br />
 
-```
-===========================================================================================================================
-#### *Script utilizado para criação via powershell <br /><br />
-#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br /><br />
-     version: "3.7"
+
+#### *Script utilizado para criação via powershell*  <br /><br />
+#### *Script para subir meu servidor e banco postgres no docker via terminal powershell* <br/><br/>
+```   
+version: "3.7"
 services:
   
   # POSTGRES SERVER
@@ -134,10 +133,13 @@ services:
 networks:
 >>>>>>> 1ce1f78fbe75c9032a53510914228c960d01a56a
   ed-network:
-    driver: bridge}
-    ```
+    driver: bridge
+  }
+    ````
 
-2. Execute e inicialize os serviços na sua máquina com o DockerDesktop
+#### *####Script para subir meu servidor e banco postgres no docker via terminal powershell* <br/><br/>
+
+2. Execute e inicialize os serviços na sua máquina com o DockerDesktop 
    <img width="829" alt="Subindo serviços pgadmin e pgpostgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/84bfaf25-51f0-47dc-8518-e376801fa88e">
 
 3. Execute o Postgres através do endereço![Logo do Markdown](img/markdown.png) http://localhost:5050/browser/
