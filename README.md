@@ -13,7 +13,7 @@ Projeto Teche Challenge realizado para pós-graduação [FIAP](https://www.fiap.
 
 ## Tecnologias
 
-As tecnologias utilizadas durante o desenvolvimento do projeto.
+Tecnologias utilizadas durante o desenvolvimento do projeto.
 
 ### [Java 17](https://docs.oracle.com/en/java/javase/17/docs/api/)
 Linguagem de programação escolhida para implementar a lógica do sistema, garantindo confiabilidade, segurança e escalabilidade.
