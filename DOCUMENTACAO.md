@@ -87,7 +87,7 @@ Lista um cliente especifico passando o seu ID.
 <br />
 
 📌
-### :yellow_circle: **PUT** http://localhost:81/cliente/1
+### 🟡 **PUT** http://localhost:81/cliente/1
 \
 Atualizando informações de um cliente especifico passando o seu ID.
 
@@ -101,7 +101,7 @@ Atualizando informações de um cliente especifico passando o seu ID.
     "email":"edcarlos.1@java.com"
    }
 ```
-#### *Resultado antes de atualizar a informação* <br/>
+#### *Resultado antes de atualizar a informação*
 ```
             {
             "id_cliente": 1,
@@ -113,8 +113,7 @@ Atualizando informações de um cliente especifico passando o seu ID.
             "endereco": []
             }
 ```
-#### *Resultado após a atualização* <br /><br />
-
+#### *Resultado após a atualização* 
 ```
     {
         "id_cliente": 1,
@@ -131,18 +130,22 @@ Atualizando informações de um cliente especifico passando o seu ID.
 \
 Deletando um cliente especifico passando o seu ID.
 
-#### *Exemplo de requisição por ID* <br /><br />
-
+#### *Exemplo de exclusão de dados do Cliente por ID* <br /><br />
 ```
-            {
-            "id_cliente": 1,
-            "nome": "Ed Carlos",
-            "dtcriacao": "2023-11-15T12:48:34.151570Z",
-            "nascimento": "2023-11-03",
-            "sexo": "Masculino",
-            "email": "edcarlos.1@java.com",
-            "endereco": []
-            }
+    Retorno: 204 No Content 
+
+    Exclusão Realizada com Sucesso!
+```
+#### *Resultado utilizando o meoto GET por ID após a exclusão* 
+🔵 **GET** http://localhost:81/cliente/1
+```
+    {
+        "timestamp": "2023-11-15T19:57:35.575214800Z",
+        "status": 404,
+        "error": "Entidade não encontrada",
+        "message": "Cliente não encontrado",
+        "path": "/cliente/1"
+    }
 ```
 <br />
 
