@@ -3,14 +3,14 @@
 Esta documentação tem como objetivo listar, descrever e exemplificar os endpoints de todas as APIs do projeto de forma a facilitar o consumo da API pelos clientes.
 
 ### **Índice**
-👨 [Cliente](#-api-de-clientes) \
+:office_worker: [Cliente](#-api-de-clientes) \
 🌎 [Endereços](#-api-de-enderecos) \
 🚗 [Veiculos](#-api-de-veiculos) \
 🎌 [Parquimetro](#-api-de-parquimetro)
 <br />
 
 
-## 👨 API de Clientes
+## :office_worker: API de Clientes
 A API de clientes consiste em um conjunto de endpoints para gerenciar os clientes. Ela dispõe de métodos para criação, edição, busca e listagem de clientes. <br /><br />
 
 📌
