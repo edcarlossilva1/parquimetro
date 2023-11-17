@@ -520,3 +520,175 @@ Deletando um veiculo especifico passando o seu ID.
         }
 ```
 <br />
+
+# 🎌 API de Parquimetro
+A API de veiculos consiste em um conjunto de endpoints para gerenciar os veiculos que estacionam. Ela dispõe de métodos para criação, edição, busca e listagem de veiculos estacionados. <br /><br />
+
+📌
+### 🟢 **POST** http://localhost:81/parquimetro
+\
+Cria um cadastrp de estacionamento do veiculo através dos dados recebidos via JSON no corpo da requisição.
+
+#### *Exemplo de inserção* <br /><br />
+```
+        {
+            "tipoTempo":2,
+            "opcaoDePagamento":1,
+            "dataHoraInicial":"2023-11-08T08:00:00",
+            "dataHoraFinal":"2023-11-08T09:43:00",
+            "cliente":
+            {
+                "id_cliente": 1
+            }
+        }
+```
+<br />
+
+📌
+### 🔵 **GET** http://localhost:81/parquimetro
+\
+Lista todos os veiculo de clientes com registros de estacionamentos contidos na base de dados.
+
+#### *Exemplo de requisição* <br /><br />
+
+```
+     {
+            "id_parquimetro": 1,
+            "tipoTempo": 2,
+            "opcaoDePagamento": 1,
+            "dataHoraInicial": "2023-11-08T10:00:00",
+            "dataHoraFinal": "2023-11-08T13:43:00",
+            "cliente": {
+                "id_cliente": 1,
+                "nome": "Ed Carlos",
+                "dtcriacao": "2023-11-17T00:17:01.627079Z",
+                "email": "edcarlos.1@java.com",
+                "nascimento": "2023-11-03",
+                "sexo": "Masculino"
+            }
+        },
+        {
+            "id_parquimetro": 2,
+            "tipoTempo": 2,
+            "opcaoDePagamento": 1,
+            "dataHoraInicial": "2023-11-08T08:00:00",
+            "dataHoraFinal": "2023-11-08T09:43:00",
+            "cliente": {
+                "id_cliente": 2,
+                "nome": "Priscila ",
+                "dtcriacao": "2023-11-17T00:17:34.231798Z",
+                "email": "priscila.1@java.com",
+                "nascimento": "2023-10-02",
+                "sexo": "Feminino"
+            }
+        }
+```
+<br />
+
+
+📌
+### 🔵 **GET** http://localhost:81/parquimetro/1
+\
+Lista um veiculo com registros de estacionamento passando o seu ID.
+
+#### *Exemplo de requisição por ID* <br /><br />
+
+```
+        {
+            "id_parquimetro": 1,
+            "tipoTempo": 2,
+            "opcaoDePagamento": 1,
+            "dataHoraInicial": "2023-11-08T10:00:00",
+            "dataHoraFinal": "2023-11-08T13:43:00",
+            "cliente": {
+                "id_cliente": 1,
+                "nome": "Ed Carlos",
+                "dtcriacao": "2023-11-17T00:17:01.627079Z",
+                "email": "edcarlos.1@java.com",
+                "nascimento": "2023-11-03",
+                "sexo": "Masculino"
+            }
+        }
+```
+<br />
+
+📌
+### 🟡 **PUT** http://localhost:81/parquimetro/1
+\
+Atualizando informações de um veiculo com registro de estacionamento passando o seu ID.
+
+#### *Exemplo de atualização por ID* <br />
+#### *Neste caso atualizamos a forma de pagamento*<br/>
+```
+        {
+            "id_parquimetro": 1,
+            "tipoTempo":2,
+            "opcaoDePagamento":3,
+            "dataHoraInicial":"2023-11-08T10:00:00",
+            "dataHoraFinal":"2023-11-08T13:43:00",
+            "cliente":
+            {
+                "id_cliente": 1
+            }
+        }
+```
+#### *Resultado antes de atualizar a informação*
+```
+        {
+            "id_parquimetro": 1,
+            "tipoTempo": 2,
+            "opcaoDePagamento": 1,
+            "dataHoraInicial": "2023-11-08T10:00:00",
+            "dataHoraFinal": "2023-11-08T13:43:00",
+            "cliente": {
+                "id_cliente": 1,
+                "nome": "Ed Carlos",
+                "dtcriacao": "2023-11-17T00:17:01.627079Z",
+                "email": "edcarlos.1@java.com",
+                "nascimento": "2023-11-03",
+                "sexo": "Masculino"
+            }
+        }
+```
+#### *Resultado após a atualização* 
+```
+        {
+            "id_parquimetro": 1,
+            "tipoTempo": 2,
+            "opcaoDePagamento": 3,
+            "dataHoraInicial": "2023-11-08T10:00:00",
+            "dataHoraFinal": "2023-11-08T13:43:00",
+            "cliente": {
+                "id_cliente": 1,
+                "nome": "Ed Carlos",
+                "dtcriacao": "2023-11-17T00:17:01.627079Z",
+                "email": "edcarlos.1@java.com",
+                "nascimento": "2023-11-03",
+                "sexo": "Masculino"
+            }
+        }
+```
+
+📌
+### 🔴 **DELETE** http://localhost:81/parquimetro/1
+\
+Deletando o registro de estacionamento de um veiculo e cliente especifico passando o seu ID.
+
+#### *Exemplo de exclusão de dados do registro de estacionamento por ID* <br /><br />
+```
+    Retorno: 204 No Content 
+
+    Exclusão Realizada com Sucesso!
+```
+#### *Resultado utilizando o metodo GET por ID após a exclusão* 
+🔵 **GET** http://localhost:81/parquimetro/1
+```
+        {
+            "timestamp": "2023-11-17T00:34:53.500891200Z",
+            "status": 404,
+            "error": "Entidade não encontrada",
+            "message": "Registro de  estacionamento não encontrado",
+            "path": "/parquimetro/1"
+        }
+```
+<br />
